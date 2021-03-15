@@ -6,7 +6,7 @@
 /*   By: fballest <fballest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 09:07:09 by fballest          #+#    #+#             */
-/*   Updated: 2021/03/08 11:54:32 by fballest         ###   ########.fr       */
+/*   Updated: 2021/03/15 14:13:57 by fballest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	ft_salida(char **aux, char **line, int cnt, int fd)
 	}
 }
 
-void	get_utils(int fd, char *buff, char *aux, char *tmp)
+void	ft_get_utils(int fd, char *buff, char **aux, char *tmp)
 {
 	if (aux[fd] == NULL)
 		aux[fd] = ft_strdup(buff);
@@ -75,6 +75,7 @@ int	get_next_line(int fd, char **line)
 	char		*tmp;
 	int			cnt;
 
+	tmp = NULL;
 	buff = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!line || fd < 0 || BUFFER_SIZE < 1 || !buff)
 		return (-1);
