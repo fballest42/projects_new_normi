@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fballest <fballest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/02 09:08:29 by fballest          #+#    #+#             */
-/*   Updated: 2021/03/04 11:06:47 by fballest         ###   ########.fr       */
+/*   Created: 2019/12/02 08:59:36 by fballest          #+#    #+#             */
+/*   Updated: 2021/09/23 09:43:44 by fballest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list		*dev;
-	t_list		*new;
-	t_list		*aux;
-
-	if (!lst || !f)
-		return (NULL);
-	aux = lst;
-	dev = ft_lstnew(f(aux->content));
-	if (!dev)
-		return (NULL);
-	aux = aux->next;
-	while (aux)
+	while (lst != 0)
 	{
-		new = ft_lstnew(f(aux->content));
-		if (!new)
-		{
-			ft_lstclear(&dev, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&dev, new);
-		aux = aux->next;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (dev);
 }

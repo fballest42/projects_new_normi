@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fballest <fballest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/28 13:53:36 by fballest          #+#    #+#             */
-/*   Updated: 2021/03/04 11:05:21 by fballest         ###   ########.fr       */
+/*   Created: 2019/11/27 13:16:41 by fballest          #+#    #+#             */
+/*   Updated: 2021/09/23 09:44:50 by fballest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstnew(void *content)
 {
-	t_list		*cont;
+	t_list	*elem;
 
-	cont = lst;
-	if (!lst)
-		return (0);
-	while (cont->next)
-	{
-		cont = cont->next;
-	}
-	return (cont);
+	elem = malloc(sizeof(t_list));
+	if (!elem)
+		return (NULL);
+	elem->content = content;
+	elem->next = NULL;
+	return (elem);
 }
