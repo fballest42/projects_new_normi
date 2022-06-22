@@ -1,2 +1,2 @@
-# projects_new_normi
-Libft, printf and get next line projects adapted to new norminette 3.0
+# Projects New Norminette
+### In 42 Madrid we have an strict way to code, to keep our projects with the best clean code possible. Remember that clean code is a reader-focused development style that produces software that's easy to write, read and maintain. To check that everything is according to this rules we have a tool named "Norminette", that checks our projects during evaluations. In the beginning of 2021 this tool was changed so the projects that we will use in future projects like; Libft and get next line must be adapted to new norminette 3.0. This repository is an update according to that situation.
